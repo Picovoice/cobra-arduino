@@ -9,10 +9,13 @@
     specific language governing permissions and limitations under the License.
 */
 
-#ifndef PV_AUDIO_REC_H
-#define PV_AUDIO_REC_H
+#ifndef PV_COBRA_AUDIO_REC_H
+#define PV_COBRA_AUDIO_REC_H
 
 #include "picovoice.h"
+
+namespace picovoice {
+namespace cobra {
 
 /**
  * Initialize audio recording
@@ -33,6 +36,9 @@ const int16_t *pv_audio_rec_get_new_buffer(void);
  *
  */
 void pv_audio_rec_deinit(void);
+
+} // namespace cobra
+} // namespace picovoice
 
 #endif // PV_AUDIO_REC_H
 

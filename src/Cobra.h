@@ -17,6 +17,9 @@
 #include "Arduino.h"
 #include "LibPrintf.h"
 
+namespace picovoice {
+namespace cobra {
+
 #include "pv_cobra.h"
 #include "utility/pv_audio_rec.h"
 
@@ -34,5 +37,8 @@ const uint8_t *pv_get_uuid(void);
  * @return size.
  */
 uint32_t pv_get_uuid_size(void);
+
+} // namespace cobra
+} // namespace picovoice
 
 #endif // COBRA_H
