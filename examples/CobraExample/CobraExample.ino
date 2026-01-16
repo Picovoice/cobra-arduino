@@ -43,7 +43,7 @@ void setup() {
     Serial.begin(9600);
     while (!Serial);
 
-    pv_status_t status = pv_audio_rec_init();
+    pv_status_t status = picovoice::cobra::pv_audio_rec_init();
     if (status != PV_STATUS_SUCCESS) {
         Serial.print("Audio init failed with ");
         Serial.println(pv_status_to_string(status));
@@ -76,7 +76,7 @@ void setup() {
 }
 
 void loop() {
-    const int16_t *buffer = pv_audio_rec_get_new_buffer();
+    const int16_t *buffer = picovoice::cobra::pv_audio_rec_get_new_buffer();
     if (buffer) {
         float voice_probability;
         const pv_status_t status = pv_cobra_process(handle, buffer, &voice_probability);

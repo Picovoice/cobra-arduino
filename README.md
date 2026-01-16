@@ -62,8 +62,8 @@ if (status != PV_STATUS_SUCCESS) {
 
 Cobra accepts single channel, 16-bit PCM audio. The sample rate can be retrieved using `pv_sample_rate()`. Cobra accepts input audio in consecutive chunks (aka frames); the length of each frame can be retrieved using `pv_cobra_frame_length()`. Inside the `loop()` function in the sketch, pass the recorded audio to the Cobra engine:
 
-```c
-const int16_t *pcm = pv_audio_rec_get_new_buffer()
+```cpp
+const int16_t *pcm = picovoice::cobra::pv_audio_rec_get_new_buffer()
 float voice_probability;
 const pv_status_t status = pv_cobra_process(handle, pcm, &voice_probability);
 if (status != PV_STATUS_SUCCESS) {
